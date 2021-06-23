@@ -1,5 +1,7 @@
 # Deep Learning - 玉山人工智慧挑戰賽2021夏季賽：中文手寫影像辨識
 
+本組參加「TBrain AI實戰吧」競賽平上的「玉山人工智慧挑戰賽2021夏季賽」，進行中文手寫影像辨識的任務，並將訓練好的模型部署在RESTful API Server上。比賽目標是預測包含一個文字的影像資料判別，目標類別共801類，分別為800字與1類isnull，故目標任務為Long Tail Classification，其中挑戰包含：繁體中文手寫字辨識資源較少、無部署API經驗以及資料包含雜訊，並且比賽方為模擬真實情況ground true label有許多錯誤需要清理。我們將在訓練模型前，對資料進行若干個前處理，包含：人工清理ground true label、Data augmentation（填白、resize、旋轉角度、水平翻轉...等)，接著為解決Long Tail 問題，將800字分為12群，以階層式多model進行訓練，將外部模型的confidence output當作權重乘上內部模型預測的topk取argmax，獲得最終預測結果，骨幹網路嘗試Resnet-50和EfficientNet-b4，實驗結果EfficientNet-b4較佳且較穩定，在驗證集中內外模型都有約9成以上的Macro F1，但在測試集中效果不佳，推測原因為比賽方資料較多雜訊，而訓練集中我們為放入這類資料導致模型無法辨識這類影像。
+
 ## Data
 
 ### Images
