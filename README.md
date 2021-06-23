@@ -1,10 +1,10 @@
-# ESUN-OCR-Chinese
+# Deep Learning - 玉山人工智慧挑戰賽2021夏季賽：中文手寫影像辨識
 
 ## Data
 
 ### Images
 
-Please go [here](https://drive.google.com/drive/folders/180dmucYW9MXQccDQ0QPqS6ct9gJPZI1A?usp=sharing) to access the following data.
+Due to rules of the competition, the following data can not be accessed currently.
 
 - Raw competition data: `train.zip`, containing 68,804 images
 
@@ -62,6 +62,8 @@ Please go [here](https://drive.google.com/drive/folders/180dmucYW9MXQccDQ0QPqS6c
 - `predict_test.py` the example of predict.py.
 
 ### Others
+
+- `./plots/`: training curves of all models.
 
 - `EDA.ipynb`: Exploratory Data Analysis on the raw data with some simple descriptive statistics.
 
